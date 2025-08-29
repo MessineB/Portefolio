@@ -15,11 +15,12 @@ export const Contact = () => (
       <h2 className="text-2xl font-semibold">Faisons quelque chose de génial</h2>
       <p className="mt-3 ui-muted">Dites-moi bonjour 👋</p>
       <EmailLink
-        email="messinebelaroussi@gmail.com"
-        className="mt-5 inline-block rounded-xl bg-emerald-600 px-5 py-3 text-white hover:opacity-90"
-      >
-        messinebelaroussi@gmail.com
-      </EmailLink>
+  email="messinebelaroussi@gmail.com"
+  subject="Contact portfolio"
+  className="mt-5 inline-block rounded-xl bg-emerald-600 px-5 py-3 text-white hover:opacity-90"
+>
+  messinebelaroussi@gmail.com
+</EmailLink>
     </motion.div>
 
   </section>
