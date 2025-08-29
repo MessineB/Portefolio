@@ -1,26 +1,79 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+html[data-theme-ready="true"] :is(
+  body,
+  .ui-card,
+  .ui-border,
+  .ui-chip,
+  .ui-nav,
+  .ui-muted,
+  a, p, h1, h2, h3, h4, h5, h6
+){
+  transition:
+    background-color .35s ease,
+    color .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease,
+    fill .35s ease,
+    background .35s ease; 
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+/* Thème light (par défaut) */
+:root,
+[data-theme="light"] {
+  --bg: #ffffff;
+  --fg: #0b0b0e;
+  --muted: #6b7280;
+
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+
+  --chip-bg: #f4f4f5;
+  --chip-fg: #52525b;
+
+  --nav-bg: rgba(255,255,255,0.8);
+  --nav-border: rgba(0,0,0,0.08);
+
+  --hover-bg: #f4f4f5;
+  --accent-soft: #ecfdf5; /* pour les icônes sur fond doux */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Thème dark */
+[data-theme="dark"] {
+  --bg: #0b0b0e;
+  --fg: #e5e7eb;
+  --muted: #a1a1aa;
+
+  --card-bg: #0f1115;
+  --card-border: rgba(255,255,255,0.12);
+
+  --chip-bg: #1f242b;
+  --chip-fg: #d4d4d8;
+
+  --nav-bg: rgba(15,17,21,0.75);
+  --nav-border: rgba(255,255,255,0.12);
+
+  --hover-bg: #171a1f;
+  --accent-soft: rgba(16,185,129,0.18);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Appliquer les tokens globaux */
+body { background: var(--bg); color: var(--fg); }
+:root { color-scheme: light; }
+[data-theme="dark"] { color-scheme: dark; }
+
+/* Accessibilité motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
 }
+
+/* Petites utilités réutilisables */
+@layer utilities {
+  .ui-card   { background-color: var(--card-bg); border-color: var(--card-border); }
+  .ui-border { border-color: var(--card-border); }
+  .ui-muted  { color: var(--muted); }
+  .ui-chip   { background-color: var(--chip-bg); color: var(--chip-fg); }
+  .ui-nav    { background-color: var(--nav-bg); border-bottom-color: var(--nav-border); }
+}
+.ui-card, .ui-border, .ui-chip, .ui-nav, .ui-muted { transition: inherit; }
