@@ -19,16 +19,16 @@ export default function Page() {
       <Navbar />
       <main className="mx-auto max-w-6xl px-4">
         {/* Hero visible direct (avec petite attente pour cohérence visuelle si tu veux) */}
-        <OnScrollMount label="Hero" minDelay={300} triggerOffset="0px 0px -5% 0px">
+        <OnScrollMount label="Hero" minDelay={300} triggerAmount={0.95}>
           <Hero />
         </OnScrollMount>
 
         {/* Les autres ne montent que lorsqu’on y arrive en scroll */}
-        <OnScrollMount label="Services" minDelay={450}><Services /></OnScrollMount>
-        <OnScrollMount label="À propos" minDelay={400}><About /></OnScrollMount>
-        <OnScrollMount label="Expérience" minDelay={450}><Experience /></OnScrollMount>
-        <OnScrollMount label="Projets" minDelay={500}><Projects /></OnScrollMount>
-        <OnScrollMount label="Contact" minDelay={350}><Contact /></OnScrollMount>
+        <OnScrollMount label="Services" minDelay={450} triggerAmount={0.6}><Services /></OnScrollMount>
+        <OnScrollMount label="À propos" minDelay={400} triggerAmount={0.6}><About /></OnScrollMount>
+        <OnScrollMount label="Expérience" minDelay={450} triggerAmount={0.6}><Experience /></OnScrollMount>
+        <OnScrollMount label="Projets" minDelay={500} triggerAmount={0.6}><Projects /></OnScrollMount>
+        <OnScrollMount label="Contact" minDelay={350} triggerAmount={0.6}><Contact /></OnScrollMount>
       </main>
       <Footer />
     </>
