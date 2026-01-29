@@ -20,7 +20,7 @@ const projects = [
     title: "GreenRoots",
     img: "/proj-3.jpg",
     tags: ["E-commerce", "Travail de groupe"],
-    link: "https://green-roots.shop/" // lien unique
+    link: "https://github.com/MessineB/Greenroots" // lien unique
   },
 ];
 

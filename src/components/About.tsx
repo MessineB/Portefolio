@@ -16,7 +16,7 @@ export const About = () => (
     </h3>
 
     <p className="mt-6 ui-muted transition-colors duration-300 leading-relaxed">
-      Développeur web diplômé niveau 5 (Bac+2) et récemment formé au titre professionnel de 
+      Développeur web diplômé niveau 6 (Bac+3) et récemment diplomé au titre professionnel de 
       <strong> Concepteur Développeur d’Applications (niveau 6)</strong> à l’école O’Clock, 
       je mets mes compétences au service de projets ambitieux et innovants.
     </p>

@@ -1,17 +1,14 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
 import { useInView, motion } from "framer-motion";
-import { SectionLoading } from "./SectionLoading";
 
 type Props = {
   children: React.ReactNode;
   label: string;
-  /** Durée mini d’affichage du loader (ms) */
   minDelay?: number;
-  /** Hauteur réservée avant chargement (évite les sauts de mise en page) */
   minHeight?: number;
-  /** Quand déclencher par rapport au viewport (IntersectionObserver rootMargin) */
-  triggerOffset?: string; // ex: "0px 0px -40% 0px" (déclenche quand ~60% visibles)
+  /** Pour déclencher quand X% de la section est visible (0 à 1). Ex: 0.6 = 60% */
+  triggerAmount?: number;
 };
 
 export default function OnScrollMount({
@@ -19,12 +16,12 @@ export default function OnScrollMount({
   label,
   minDelay = 450,
   minHeight = 520,
-  triggerOffset = "0px 0px -40% 0px",
+  triggerAmount = 0.6, // ≈ ton ancien "-40%" (déclenche quand ~60% visibles)
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { margin: triggerOffset, once: true });
-  const [armed, setArmed] = useState(false);     // prêt à afficher contenu
-  const [started, setStarted] = useState(false); // a-t-on montré le loader
+  const inView = useInView(ref, { amount: triggerAmount, once: true });
+  const [armed, setArmed] = useState(false);
+  const [started, setStarted] = useState(false);
 
   useEffect(() => {
     if (inView && !armed) {
@@ -37,13 +34,11 @@ export default function OnScrollMount({
   return (
     <section ref={ref} className="scroll-mt-20 py-16">
       {!armed ? (
-        // Loader n’apparaît QUE quand la section est atteinte
         started ? (
           <div className="mx-auto max-w-6xl px-4" style={{ minHeight }}>
-            <SectionLoading label={label} />
+            {/* ton loader ici */}
           </div>
         ) : (
-          // Placeholder transparent pour garder la place tant qu’on n’a pas atteint la section
           <div className="mx-auto max-w-6xl px-4" style={{ minHeight }} aria-hidden="true" />
         )
       ) : (
