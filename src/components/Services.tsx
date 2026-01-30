@@ -13,7 +13,7 @@ const items = [
 ];
 
 export const Services = () => (
-  <section id="services" className="scroll-mt-20 py-16">
+  <section id="services" className="scroll-mt-20 py-7">
     <motion.h2 variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-2xl font-semibold">
       Ce que je propose
     </motion.h2>

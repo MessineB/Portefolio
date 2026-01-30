@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { fadeUp } from "../lib/motion";
 
 export const About = () => (
-  <section id="about" className="scroll-mt-20 py-16">
+  <section id="about" className="scroll-mt-20 py-7">
   <motion.div
     variants={fadeUp}
     initial="hidden"

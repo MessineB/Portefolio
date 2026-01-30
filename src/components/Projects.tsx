@@ -25,7 +25,7 @@ const projects = [
 ];
 
 export const Projects = () => (
-  <section id="projects" className="scroll-mt-20 py-16">
+  <section id="projects" className="scroll-mt-20 py-7">
     <motion.h2
       variants={fadeUp}
       initial="hidden"

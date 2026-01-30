@@ -9,7 +9,7 @@ const jobs = [
 ];
 
 export const Experience = () => (
-    <section id="experience" className="scroll-mt-20 py-16">
+    <section id="experience" className="scroll-mt-20 py-7">
         <motion.h2 variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-2xl font-semibold">
             Mon expérience
         </motion.h2>

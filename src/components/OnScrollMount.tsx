@@ -32,7 +32,7 @@ export default function OnScrollMount({
   }, [inView, armed, minDelay]);
 
   return (
-    <section ref={ref} className="scroll-mt-20 py-16">
+    <section ref={ref} className="scroll-mt-20 py-7">
       {!armed ? (
         started ? (
           <div className="mx-auto max-w-6xl px-4" style={{ minHeight }}>

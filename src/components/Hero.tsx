@@ -5,7 +5,7 @@ import { fadeUp, stagger } from "../lib/motion";
 
 export const Hero = () => {
     return (
-        <section className="grid items-center gap-10 py-16 md:grid-cols-2 md:py-24">
+        <section className="grid items-center gap-10 py-7 md:grid-cols-2 md:py-24">
             {/* Texte */}
             <motion.div variants={stagger} initial="hidden" animate="show">
             <motion.p variants={fadeUp} className="text-sm ui-muted">Back • Frontend • API • Sécurité • Conception</motion.p>
@@ -13,7 +13,7 @@ export const Hero = () => {
                     Salut, Je suis <span className="text-emerald-600">Messine Belaroussi !</span>
                 </motion.h1>
                 <motion.p variants={fadeUp} className="mt-4 ui-muted">
-                Développeur web passionné, diplômé niveau 5 (Bac+2) et récemment formé au titre professionnel de Concepteur Développeur d’Applications (niveau 6) à l’école O’Clock.
+                Développeur web passionné, diplômé Bac+3, récemment formé et certifié Concepteur Développeur d’Applications à l’école O’Clock.
                 </motion.p>
                 <motion.div variants={fadeUp} className="mt-8 flex gap-3">
                     <a href="#projects" className="rounded-xl bg-emerald-600 px-5 py-3 text-white hover:opacity-90">

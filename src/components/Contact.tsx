@@ -4,7 +4,7 @@ import { fadeUp } from "../lib/motion";
 import { EmailLink } from "./mail/Email.link";
 
 export const Contact = () => (
-  <section id="contact" className="scroll-mt-20 py-16">
+  <section id="contact" className="scroll-mt-20 py-7">
     <motion.div
       variants={fadeUp}
       initial="hidden"
