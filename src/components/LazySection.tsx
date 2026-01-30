@@ -31,7 +31,7 @@ export default function LazySection({
 
   return (
     <section
-      ref={ref as any}
+      ref={ref}
       id={id}
       aria-label={ariaLabel}
       className={`section-gap ${className ?? ""}`}
